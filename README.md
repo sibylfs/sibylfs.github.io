@@ -1,2 +1,2 @@
-# sibylfs.github.io
-SibylFS website
+# sibylfs_www
+SibylFS documentation hosted from github pages

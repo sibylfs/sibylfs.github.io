@@ -5,9 +5,9 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Introduction | Introduction</title>
+        <title>Generating HTML output | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="These pages are documentation for the SibylFS project. ">
+        <meta name="description" content="">
         <meta name="generator" content="GitBook 2.1.0">
         
         
@@ -25,8 +25,10 @@
         
     
     
-    <link rel="next" href="./overview.html" />
+    <link rel="next" href="./faq.html" />
     
+    
+    <link rel="prev" href="./checking_traces.html" />
     
 
         
@@ -34,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="0" data-basepath="." data-revision="Fri Aug 07 2015 12:01:39 GMT+0100 (BST)">
+    <div class="book" data-level="6" data-basepath="." data-revision="Fri Aug 07 2015 12:01:39 GMT+0100 (BST)">
     
 
 <div class="book-summary">
@@ -51,7 +53,7 @@
 
         
     
-        <li class="chapter active" data-level="0" data-path="index.html">
+        <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
@@ -139,7 +141,7 @@
             
         </li>
     
-        <li class="chapter " data-level="6" data-path="generating_html.html">
+        <li class="chapter active" data-level="6" data-path="generating_html.html">
             
                 
                     <a href="./generating_html.html">
@@ -274,39 +276,13 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="introduction">Introduction</h1>
-<p>These pages are documentation for the SibylFS project. </p>
-<!--
-
-The generated HTML documentation may be found at
-<http://www.cs.le.ac.uk/people/tr61/fs/_book/index.html>
-
-The generated PDF documentation may be found at
-<http://www.cs.le.ac.uk/people/tr61/fs/book.pdf>
-
--->
-<p>These pages document how to use SibylFS. The paper &quot;SibylFS: formal
-specification and oracle-based testing for POSIX and real-world file
-systems&quot; <a href="http://www.tom-ridge.com/resources/doc/sosp_draft.pdf" target="_blank">http://www.tom-ridge.com/resources/doc/sosp_draft.pdf</a> <strong><em>should be read first</em></strong>, particularly sections 1
-and 2 which give background and an overview of the system, and section
-6 which describes the test suite and harness.</p>
-<h2 id="code">Code</h2>
-<p>SibylFS is hosted on Github, see <a href="https://bitbucket.org/tomridge/fs" target="_blank">https://bitbucket.org/tomridge/fs</a></p>
-<h2 id="binaries">Binaries</h2>
-<p>Binaries can be downloaded from Bitbucket, <a href="https://bitbucket.org/tomridge/fs/downloads" target="_blank">here</a>. 
-See <a href="install.html">installation</a> for further instructions.</p>
-<h2 id="test-suite">Test suite</h2>
-<p>The test suite is available from Github, <a href="https://bitbucket.org/tomridge/fs_test_suite.git" target="_blank">https://bitbucket.org/tomridge/fs_test_suite.git</a></p>
-<h2 id="examples">Examples</h2>
-<ul>
-<li><a href="http://www.cs.le.ac.uk/people/tr61/fs/2015-07-10_KvD/html/index.html" target="_blank">http://www.cs.le.ac.uk/people/tr61/fs/2015-07-10_KvD/html/index.html</a> - a small example, ext4 on Linux, <code>mkdir</code> tests</li>
-<li><a href="http://tomjridge.github.io/2015-07-24_y2I/html/" target="_blank">http://tomjridge.github.io/2015-07-24_y2I/html/</a> - a full test run, ext4, Linux</li>
-<li><a href="http://fs.dsheets.name/" target="_blank">http://fs.dsheets.name/</a> - a repository of test runs across many different platforms and file systems</li>
-</ul>
-<h2 id="documentation">Documentation</h2>
-<p>This documentation lives in the <code>doc/www</code> directory of the code repository. The pages are
-generated from Markdown, using gitbook
-<a href="https://github.com/GitbookIO/gitbook" target="_blank">https://github.com/GitbookIO/gitbook</a></p>
+                        <h1 id="generating-html-output">Generating HTML output</h1>
+<p>The output from checking is not very user friendly. To generate HTML, run the following:</p>
+<pre><code>fs_test.sh html ./2015-07-10_KvD
+</code></pre><p>This will print a message similar to:</p>
+<pre><code>Browse to file:///mnt/sdb1/tom/bitbucket/fs/./2015-07-10_KvD/html/index.html
+</code></pre><p>Opening this link should display a page similar to <a href="http://www.cs.le.ac.uk/people/tr61/fs/2015-07-10_KvD/html/index.html" target="_blank">http://www.cs.le.ac.uk/people/tr61/fs/2015-07-10_KvD/html/index.html</a></p>
+<p>For a single filesystem (say, ext4 on Linux), a full check run with HTML is about 1.2GB. An example full run is <a href="http://tomjridge.github.io/2015-07-24_y2I/html/" target="_blank">http://tomjridge.github.io/2015-07-24_y2I/html/</a></p>
 
                     
                     </section>
@@ -317,8 +293,10 @@ generated from Markdown, using gitbook
         </div>
 
         
+        <a href="./checking_traces.html" class="navigation navigation-prev " aria-label="Previous page: Checking the traces using SibylFS"><i class="fa fa-angle-left"></i></a>
         
-        <a href="./overview.html" class="navigation navigation-next navigation-unique" aria-label="Next page: System overview"><i class="fa fa-angle-right"></i></a>
+        
+        <a href="./faq.html" class="navigation navigation-next " aria-label="Next page: FAQ"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
