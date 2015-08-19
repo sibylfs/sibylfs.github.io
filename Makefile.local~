@@ -1,5 +1,4 @@
-WWWDIR:=/tmp/l/github/sibylfs.github.io
-
+WWWDIR:=/tmp/l/github/super/sibylfs_www
 upload:
 	cp -R _book/* $(WWWDIR)
 	cd $(WWWDIR) && git status && git add * && git commit -m "+" -a && git push
