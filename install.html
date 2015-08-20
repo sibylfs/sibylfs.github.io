@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="2" data-basepath="." data-revision="Wed Aug 19 2015 14:46:10 GMT+0100 (BST)">
+    <div class="book" data-level="2" data-basepath="." data-revision="Thu Aug 20 2015 13:35:00 GMT+0100 (BST)">
     
 
 <div class="book-summary">
@@ -277,7 +277,7 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="installation">Installation</h1>
-<p>The repository for the project is <a href="https://github.com/sibylfs/fs" target="_blank">https://github.com/sibylfs/fs</a>
+<p>The repository for the project is <a href="https://github.com/sibylfs/sibylfs_src" target="_blank">https://github.com/sibylfs/sibylfs_src</a>
 On Linux, the simplest way to install is probably using prebuilt
 binaries via nix (see below). Potentially quicker, but fragile, is to
 install &quot;plain binaries&quot;. The most reliable method is probably
@@ -330,15 +330,15 @@ x86-64) (and possibly others e.g. Linux i686).</p>
 <li><p>Use git to clone the SibylFS source code:</p>
 </li>
 </ul>
-<pre><code>git clone https://github.com/sibylfs/fs
+<pre><code>git clone https://github.com/sibylfs/sibylfs_src
 </code></pre><ul>
-<li><p>This will create a directory <code>fs</code>. In the following, paths starting
-with <code>fs/</code> refer to this directory.</p>
+<li><p>This will create a directory <code>sibylfs_src</code>. In the following, paths starting
+with <code>sibylfs_src/</code> refer to this directory.</p>
 </li>
-<li><p>Change to the <code>fs/</code> directory: </p>
+<li><p>Change to the <code>sibylfs_src/</code> directory: </p>
 </li>
 </ul>
-<pre><code>cd fs/
+<pre><code>cd sibylfs_src/
 </code></pre><ul>
 <li>Build (this may take a long time) and install SibylFS by typing: </li>
 </ul>
@@ -380,11 +380,11 @@ this directory.</p>
 <p>Now you need to get the SibylFS source.</p>
 <ul>
 <li>Use git to clone the SibylFS source: <code>git clone
-https://github.com/sibylfs/fs</code>. This will create a directory
-<code>fs</code>. In the following, paths starting with <code>fs/</code> refer to this
+https://github.com/sibylfs/sibylfs_src</code>. This will create a directory
+<code>sibylfs_src</code>. In the following, paths starting with <code>sibylfs_src/</code> refer to this
 directory.</li>
 </ul>
-<p>The <code>fs/</code> directory contains two particular subdirectories: <code>fs_spec</code>
+<p>The <code>sibylfs_src/</code> directory contains two particular subdirectories: <code>fs_spec</code>
 (the specification) and <code>fs_test</code> (the test tools). To build <code>fs_spec</code> you need the following:</p>
 <ul>
 <li><p>ocaml tool cppo: <code>opam install cppo</code></p>
@@ -403,14 +403,14 @@ directory.</li>
 </ul>
 <p>If you have opam, you can install ocamlfind, sha, cppo, cmdliner,
 fd-send-recv, camlp4, sexplib, menhir and all of their transitive
-dependencies with <code>make dep</code> in the <code>fs/</code> directory.</p>
+dependencies with <code>make dep</code> in the <code>sibylfs_src/</code> directory.</p>
 <p>Having installed these dependencies, you should now be able to build SibylFS:</p>
 <ul>
-<li>In <code>fs/</code> type: <code>make</code></li>
+<li>In <code>sibylfs_src/</code> type: <code>make</code></li>
 </ul>
-<p>When this is complete, you need to add the executables in <code>fs/fs_test</code>
+<p>When this is complete, you need to add the executables in <code>sibylfs_src/fs_test</code>
 to your path, e.g. by typing:</p>
-<pre><code>export PATH=&lt;absolute path to fs&gt;/fs_test:$PATH
+<pre><code>export PATH=&lt;absolute path to sibylfs_src&gt;/fs_test:$PATH
 </code></pre><!-- FIXME test these source-compile instructions -->
 <h2 id="after-installation">After installation</h2>
 <p>SibylFS provides several command-line tools. These are typically
