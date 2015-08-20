@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="2" data-basepath="." data-revision="Thu Aug 20 2015 13:35:00 GMT+0100 (BST)">
+    <div class="book" data-level="2" data-basepath="." data-revision="Thu Aug 20 2015 15:03:34 GMT+0100 (BST)">
     
 
 <div class="book-summary">
@@ -279,20 +279,11 @@
                         <h1 id="installation">Installation</h1>
 <p>The repository for the project is <a href="https://github.com/sibylfs/sibylfs_src" target="_blank">https://github.com/sibylfs/sibylfs_src</a>
 On Linux, the simplest way to install is probably using prebuilt
-binaries via nix (see below). Potentially quicker, but fragile, is to
-install &quot;plain binaries&quot;. The most reliable method is probably
+binaries via nix (see below). </p>
+<!-- Potentially quicker, but fragile, is to
+install "plain binaries".  -->
+<p>The most reliable method is probably
 &quot;installing from source via nix&quot;.</p>
-<h2 id="installing-plain-binaries">Installing plain binaries</h2>
-<p><strong><em>This option is not really supported</em></strong>, but is probably the
-quickest way to install (if it works). Go to
-<a href="https://github.com/sibylfs/sibylfs_binaries/releases/tag" target="_blank">https://github.com/sibylfs/sibylfs_binaries/releases/tag</a>, select the
-latest tag, and download the <code>.tar.gz</code> file corresponding to your OS
-and architecture (eg <code>sibylfs_linux_amd64.tar.gz</code> for Linux, 64
-bit). Unpack this file:</p>
-<pre><code>tar xvzf &lt;file you downloaded&gt;
-</code></pre><p>This should create a directory <code>sibylfs/bin</code> containing the
-executables. You should place these on your path (or execute from
-inside that directory).</p>
 <h2 id="installing-prebuilt-binaries-via-nix">Installing prebuilt binaries via nix</h2>
 <p>Nix is a package manager available on Linux (x86-64) and Mac (Darwin,
 x86-64) (and possibly others e.g. Linux i686).</p>
@@ -349,6 +340,17 @@ tools build, and the executables. To install the result, type <code>nix-env
 -i ./result</code></p>
 <p>An example install is as follows (this uses <code>nix-build</code> to build, followed by <code>nix-env -i ./result</code> to install):</p>
 <p><a href="https://asciinema.org/a/c4nxhmnn1ctsi1w1615wzgrrf" target="_blank"><img src="https://asciinema.org/a/c4nxhmnn1ctsi1w1615wzgrrf.png" alt="asciicast"></a></p>
+<h2 id="installing-plain-binaries-2015-08-20-fixme-not-working">Installing plain binaries (2015-08-20 FIXME not working)</h2>
+<p><strong><em>This option is not really supported</em></strong>, but is probably the
+quickest way to install (if it works). Go to
+<a href="https://github.com/sibylfs/sibylfs_binaries/releases/tag" target="_blank">https://github.com/sibylfs/sibylfs_binaries/releases/tag</a>, select the
+latest tag, and download the <code>.tar.gz</code> file corresponding to your OS
+and architecture (eg <code>sibylfs_linux_amd64.tar.gz</code> for Linux, 64
+bit). Unpack this file:</p>
+<pre><code>tar xvzf &lt;file you downloaded&gt;
+</code></pre><p>This should create a directory <code>sibylfs/bin</code> containing the
+executables. You should place these on your path (or execute from
+inside that directory).</p>
 <h2 id="installing-from-source-using-ocaml-ocamlfind-and-opam">Installing from source using OCaml, ocamlfind and opam</h2>
 <p><strong><em>Because of the large number of dependencies, this method is quite
    fragile. </em></strong></p>
