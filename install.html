@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="2" data-basepath="." data-revision="Thu Aug 20 2015 15:03:34 GMT+0100 (BST)">
+    <div class="book" data-level="2" data-basepath="." data-revision="Thu Aug 20 2015 15:20:25 GMT+0100 (BST)">
     
 
 <div class="book-summary">
@@ -313,7 +313,7 @@ x86-64) (and possibly others e.g. Linux i686).</p>
 <li>This will print various entries; the last entry will be a path to sibylfs, something like:
 <code>/nix/store/f77518afhrq1jsih7rgr5y2gc9v8zsi3-fs_test</code>; now install the binaries into your path: </li>
 </ul>
-<pre><code>nix-env -i [path to sibylfs from previous step]
+<pre><code>nix-env -i /nix/store/f77518afhrq1jsih7rgr5y2gc9v8zsi3-fs_test  # N.B. replace this with the path from the import!
 </code></pre><h2 id="installing-from-source-via-nix">Installing from source via nix</h2>
 <ul>
 <li><p>Install nix as above</p>
