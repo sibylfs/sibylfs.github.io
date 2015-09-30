@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="2" data-basepath="." data-revision="Wed Sep 30 2015 11:00:10 GMT+0100 (BST)">
+    <div class="book" data-level="2" data-basepath="." data-revision="Wed Sep 30 2015 11:11:10 GMT+0100 (BST)">
     
 
 <div class="book-summary">
@@ -328,7 +328,7 @@ with <code>sibylfs_src/</code> refer to this directory.</p>
 <li><p>Download the prebuilt binaries for your platform. Go to the binary releases page <a href="https://github.com/sibylfs/sibylfs_binaries/releases" target="_blank">https://github.com/sibylfs/sibylfs_binaries/releases</a>, select the newest release, and download the closure file that corresponds to your architecture:</p>
 <ul>
 <li>Linux 64-bit binaries: <code>sibylfs_nix_linux_amd64.closure</code></li>
-<li>Mac OS X 10.9.3 64-bit binaries (may work on other platforms): <code>FIXME_nix_mac.closure</code></li>
+<li>Mac OS X 10.10.3 (and maybe others) 64-bit binaries: <code>sibylfs_nix_mac_amd64.closure</code></li>
 </ul>
 </li>
 <li><p>Place the binaries in the nix store: </p>
@@ -337,7 +337,7 @@ with <code>sibylfs_src/</code> refer to this directory.</p>
 <pre><code>nix-store --import &lt;   [path to downloaded binay]
 </code></pre><ul>
 <li>This will print various entries; the last entry will be a path to sibylfs, something like:
-<code>/nix/store/f77518afhrq1jsih7rgr5y2gc9v8zsi3-fs_test</code>; now install the binaries into your path: </li>
+<code>/nix/store/f77518afhrq1jsih7rgr5y2gc9v8zsi3-fs_test</code>. Now install the binaries into your path: </li>
 </ul>
 <pre><code>nix-env -i /nix/store/f77518afhrq1jsih7rgr5y2gc9v8zsi3-fs_test  # N.B. replace this with the path from the import!
 </code></pre><h2 id="installing-plain-binaries-linux">Installing plain binaries (Linux)</h2>
