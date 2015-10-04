@@ -8,7 +8,7 @@
         <title>Introduction | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="These pages are documentation for the SibylFS project. ">
-        <meta name="generator" content="GitBook 2.1.0">
+        <meta name="generator" content="GitBook 2.4.3">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -19,6 +19,10 @@
         <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
         
     <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
     
     
 
@@ -34,32 +38,33 @@
     <body>
         
         
-    <div class="book" data-level="0" data-basepath="." data-revision="Wed Sep 30 2015 15:58:11 GMT+0100 (BST)">
+    <div class="book" data-level="0" data-basepath="." data-revision="Sun Oct 04 2015 21:30:03 GMT+0100 (BST)">
     
 
 <div class="book-summary">
-    <div class="book-search">
+    <div class="book-search" role="search">
         <input type="text" placeholder="Type to search" class="form-control" />
     </div>
-    <ul class="summary">
-        
-        
-        
-        
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
 
-        
+            
 
-        
+            
     
         <li class="chapter active" data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
+                
                         <i class="fa fa-check"></i>
                         
                         Introduction
                     </a>
-                
             
             
         </li>
@@ -68,13 +73,13 @@
             
                 
                     <a href="./help.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>1.</b>
                         
                         Getting help
                     </a>
-                
             
             
         </li>
@@ -83,13 +88,13 @@
             
                 
                     <a href="./overview.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>2.</b>
                         
                         System overview
                     </a>
-                
             
             
         </li>
@@ -98,13 +103,13 @@
             
                 
                     <a href="./install.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>3.</b>
                         
                         Installation
                     </a>
-                
             
             
         </li>
@@ -113,13 +118,13 @@
             
                 
                     <a href="./obtaining_test_scripts.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>4.</b>
                         
                         Obtaining test scripts
                     </a>
-                
             
             
         </li>
@@ -128,13 +133,13 @@
             
                 
                     <a href="./executing_scripts.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>5.</b>
                         
                         Executing test scripts to obtain traces
                     </a>
-                
             
             
         </li>
@@ -143,13 +148,13 @@
             
                 
                     <a href="./checking_traces.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>6.</b>
                         
                         Checking the traces using SibylFS
                     </a>
-                
             
             
         </li>
@@ -158,13 +163,13 @@
             
                 
                     <a href="./generating_html.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>7.</b>
                         
                         Generating HTML output
                     </a>
-                
             
             
         </li>
@@ -173,13 +178,13 @@
             
                 
                     <a href="./faq.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>8.</b>
                         
                         FAQ
                     </a>
-                
             
             
         </li>
@@ -188,33 +193,34 @@
             
                 
                     <a href="./acks.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>9.</b>
                         
                         Acknowledgements
                     </a>
-                
             
             
         </li>
     
 
 
-        
-        <li class="divider"></li>
-        <li>
-            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-                Published with GitBook
-            </a>
-        </li>
-        
-    </ul>
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
 </div>
 
     <div class="book-body">
         <div class="body-inner">
-            <div class="book-header">
+            <div class="book-header" role="navigation">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
     <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
@@ -298,7 +304,7 @@
     </h1>
 </div>
 
-            <div class="page-wrapper" tabindex="-1">
+            <div class="page-wrapper" tabindex="-1" role="main">
                 <div class="page-inner">
                 
                 
@@ -312,13 +318,14 @@ systems&quot; <a href="http://sigops.org/sosp/sosp15/current/2015-Monterey/print
 and 2 which give background and an overview of the system, and section
 6 which describes the test suite and harness.</p>
 <h2 id="code">Code</h2>
-<p>SibylFS is hosted on Github, see <a href="https://github.com/sibylfs/" target="_blank">https://github.com/sibylfs/</a> . See
-<a href="install.html">here</a> for how to install from source.</p>
+<p>SibylFS is hosted on GitHub, see <a href="https://github.com/sibylfs/" target="_blank">https://github.com/sibylfs/</a>. Read
+<a href="install.html">the installation instructions</a> for guidance on how and
+when to install from source.</p>
 <h2 id="binaries">Binaries</h2>
-<p>Binaries can be downloaded from Github. See
+<p>Binaries can be downloaded from GitHub. See
 <a href="install.html">installation</a> for further instructions.</p>
 <h2 id="test-suite">Test suite</h2>
-<p>The test suite is available from Github. See
+<p>The test suite is available from GitHub. See
 <a href="obtaining_test_scripts.html">here</a> for further instructions.</p>
 <h2 id="examples">Examples</h2>
 <ul>

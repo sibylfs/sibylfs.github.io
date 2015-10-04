@@ -8,7 +8,7 @@
         <title>Executing test scripts to obtain traces | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.1.0">
+        <meta name="generator" content="GitBook 2.4.3">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -19,6 +19,10 @@
         <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
         
     <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
     
     
 
@@ -36,32 +40,33 @@
     <body>
         
         
-    <div class="book" data-level="5" data-basepath="." data-revision="Wed Sep 30 2015 15:58:11 GMT+0100 (BST)">
+    <div class="book" data-level="5" data-basepath="." data-revision="Sun Oct 04 2015 21:30:03 GMT+0100 (BST)">
     
 
 <div class="book-summary">
-    <div class="book-search">
+    <div class="book-search" role="search">
         <input type="text" placeholder="Type to search" class="form-control" />
     </div>
-    <ul class="summary">
-        
-        
-        
-        
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
 
-        
+            
 
-        
+            
     
         <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
+                
                         <i class="fa fa-check"></i>
                         
                         Introduction
                     </a>
-                
             
             
         </li>
@@ -70,13 +75,13 @@
             
                 
                     <a href="./help.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>1.</b>
                         
                         Getting help
                     </a>
-                
             
             
         </li>
@@ -85,13 +90,13 @@
             
                 
                     <a href="./overview.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>2.</b>
                         
                         System overview
                     </a>
-                
             
             
         </li>
@@ -100,13 +105,13 @@
             
                 
                     <a href="./install.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>3.</b>
                         
                         Installation
                     </a>
-                
             
             
         </li>
@@ -115,13 +120,13 @@
             
                 
                     <a href="./obtaining_test_scripts.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>4.</b>
                         
                         Obtaining test scripts
                     </a>
-                
             
             
         </li>
@@ -130,13 +135,13 @@
             
                 
                     <a href="./executing_scripts.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>5.</b>
                         
                         Executing test scripts to obtain traces
                     </a>
-                
             
             
         </li>
@@ -145,13 +150,13 @@
             
                 
                     <a href="./checking_traces.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>6.</b>
                         
                         Checking the traces using SibylFS
                     </a>
-                
             
             
         </li>
@@ -160,13 +165,13 @@
             
                 
                     <a href="./generating_html.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>7.</b>
                         
                         Generating HTML output
                     </a>
-                
             
             
         </li>
@@ -175,13 +180,13 @@
             
                 
                     <a href="./faq.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>8.</b>
                         
                         FAQ
                     </a>
-                
             
             
         </li>
@@ -190,33 +195,34 @@
             
                 
                     <a href="./acks.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>9.</b>
                         
                         Acknowledgements
                     </a>
-                
             
             
         </li>
     
 
 
-        
-        <li class="divider"></li>
-        <li>
-            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-                Published with GitBook
-            </a>
-        </li>
-        
-    </ul>
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
 </div>
 
     <div class="book-body">
         <div class="body-inner">
-            <div class="book-header">
+            <div class="book-header" role="navigation">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
     <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
@@ -300,36 +306,43 @@
     </h1>
 </div>
 
-            <div class="page-wrapper" tabindex="-1">
+            <div class="page-wrapper" tabindex="-1" role="main">
                 <div class="page-inner">
                 
                 
                     <section class="normal" id="section-">
                     
                         <h1 id="executing-test-scripts-to-obtain-traces">Executing test scripts to obtain traces</h1>
-<p>WARNING!!! Executing test scripts directly on your machine has the
-potential to destroy your data. For example, as superuser, you
+<p><strong>WARNING!!! Executing test scripts directly on your machine has the
+potential to destroy your data.</strong> For example, as superuser, you
 probably do not want to run a test which successfully removes the root
 directory of your filesystem. To avoid such unfortunate events, the
-tools typically run all tests in a chroot environment, so you should
-be reasonably safe.</p>
+tools run all tests in a chroot environment, so you should be reasonably
+safe. However, because the test environment&apos;s isolation measures may
+have defects, it is recommended that you run all tests in virtual
+machines or installations which you can afford to lose.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>The following assumes you have installed SibylFS, and that the
-executables <code>fs_test.sh</code>, <code>fs_test</code>, etc are available on your path.</p>
+executable <code>fs_test</code> is available on your path.</p>
 <h2 id="executing-the-scripts">Executing the scripts</h2>
 <p>The test executor executes the test scripts and records the calls and
 return values at the libc interface. To see the manpage:</p>
-<pre><code>fs_test.sh exec --help
-</code></pre><p>To run a short sequence of tests, on Linux ext, try the following in directory <code>fs_test_suite/</code>:</p>
-<pre><code>fs_test.sh exec --suites ./test-suite/ --suite=mkdir --model ext4
-</code></pre><p>You probably need to be root to run this, so try:</p>
-<pre><code>sudo env &quot;PATH=$PATH&quot; fs_test.sh exec --suites ./test-suite/ --suite=mkdir --model ext4
+<pre><code>fs_test exec --help
+</code></pre><p>To run a short sequence of <code>mkdir</code> tests, on Linux ext4, execute the
+following in directory <code>sibylfs_test_suite/</code>:</p>
+<pre><code>fs_test exec --suites test-suite --suite=mkdir --model ext4 2&gt; summary.err.md
+</code></pre><p>You need to be root to run this in order to have the ability to mount
+file systems and create and destroy temporary users and groups. As a
+non-superuser, you could run:</p>
+<pre><code>sudo sh -c &quot;env \&quot;PATH=$PATH:\$PATH\&quot; fs_test exec --suites test-suite --suite=mkdir --model ext4 2&gt; summary.err.md&quot;
 </code></pre><p>If this executes successfully, there should be a directory named
 something like <code>2015-07-10_KvD</code> (the date, followed by a random string
-of 3 letters which serves as a unique identifier). This is probably
-owned by root, so you need to type:</p>
-<pre><code>sudo chown -R tr61:tr61 2015-07-10_KvD/ # N.B. replace tr61 with your uid:gid
-</code></pre><p>Then you should be able to see the trace files by typing <code>find 2015-07-10_KvD/</code>:</p>
+of 3 letters which serves as a unique identifier). This will be owned by
+root, so you need to type:</p>
+<pre><code>sudo chown -R username:group 2015-07-10_KvD
+</code></pre><p>Replacing <code>username</code> and <code>group</code> with your username and personal group,
+respectively.</p>
+<p>Then you should be able to see the trace files by typing <code>find 2015-07-10_KvD/</code>:</p>
 <pre><code>2015-07-10_KvD/
 2015-07-10_KvD/ext4_loop
 2015-07-10_KvD/ext4_loop/mkdir
@@ -343,8 +356,9 @@ owned by root, so you need to type:</p>
 [...]
 2015-07-10_KvD/ext4_loop/mkdir/results/exec_mkdir___mkdir_nonexist_dir__nonexist_3___0777-int.trace.err
 2015-07-10_KvD/index.traces
-</code></pre><p>Note the directory structure (<code>...mkdir/*</code> which holds the original scripts and <code>.../mkdir/results/*</code> which holds the executed traces)
-and existence of the file <code>index.traces</code></p>
+</code></pre><p>Note the directory structure (<code>.../mkdir/</code> which contains the original
+scripts and <code>.../mkdir/results/</code> which contains the executed traces) and
+existence of the file <code>index.traces</code>.</p>
 
                     
                     </section>

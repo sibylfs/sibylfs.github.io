@@ -8,7 +8,7 @@
         <title>Generating HTML output | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.1.0">
+        <meta name="generator" content="GitBook 2.4.3">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -19,6 +19,10 @@
         <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
         
     <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
     
     
 
@@ -36,32 +40,33 @@
     <body>
         
         
-    <div class="book" data-level="7" data-basepath="." data-revision="Wed Sep 30 2015 15:58:11 GMT+0100 (BST)">
+    <div class="book" data-level="7" data-basepath="." data-revision="Sun Oct 04 2015 21:30:03 GMT+0100 (BST)">
     
 
 <div class="book-summary">
-    <div class="book-search">
+    <div class="book-search" role="search">
         <input type="text" placeholder="Type to search" class="form-control" />
     </div>
-    <ul class="summary">
-        
-        
-        
-        
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
 
-        
+            
 
-        
+            
     
         <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
+                
                         <i class="fa fa-check"></i>
                         
                         Introduction
                     </a>
-                
             
             
         </li>
@@ -70,13 +75,13 @@
             
                 
                     <a href="./help.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>1.</b>
                         
                         Getting help
                     </a>
-                
             
             
         </li>
@@ -85,13 +90,13 @@
             
                 
                     <a href="./overview.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>2.</b>
                         
                         System overview
                     </a>
-                
             
             
         </li>
@@ -100,13 +105,13 @@
             
                 
                     <a href="./install.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>3.</b>
                         
                         Installation
                     </a>
-                
             
             
         </li>
@@ -115,13 +120,13 @@
             
                 
                     <a href="./obtaining_test_scripts.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>4.</b>
                         
                         Obtaining test scripts
                     </a>
-                
             
             
         </li>
@@ -130,13 +135,13 @@
             
                 
                     <a href="./executing_scripts.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>5.</b>
                         
                         Executing test scripts to obtain traces
                     </a>
-                
             
             
         </li>
@@ -145,13 +150,13 @@
             
                 
                     <a href="./checking_traces.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>6.</b>
                         
                         Checking the traces using SibylFS
                     </a>
-                
             
             
         </li>
@@ -160,13 +165,13 @@
             
                 
                     <a href="./generating_html.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>7.</b>
                         
                         Generating HTML output
                     </a>
-                
             
             
         </li>
@@ -175,13 +180,13 @@
             
                 
                     <a href="./faq.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>8.</b>
                         
                         FAQ
                     </a>
-                
             
             
         </li>
@@ -190,33 +195,34 @@
             
                 
                     <a href="./acks.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>9.</b>
                         
                         Acknowledgements
                     </a>
-                
             
             
         </li>
     
 
 
-        
-        <li class="divider"></li>
-        <li>
-            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-                Published with GitBook
-            </a>
-        </li>
-        
-    </ul>
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
 </div>
 
     <div class="book-body">
         <div class="body-inner">
-            <div class="book-header">
+            <div class="book-header" role="navigation">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
     <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
@@ -300,19 +306,23 @@
     </h1>
 </div>
 
-            <div class="page-wrapper" tabindex="-1">
+            <div class="page-wrapper" tabindex="-1" role="main">
                 <div class="page-inner">
                 
                 
                     <section class="normal" id="section-">
                     
                         <h1 id="generating-html-output">Generating HTML output</h1>
-<p>The output from checking is not very user friendly. To generate HTML, run the following:</p>
-<pre><code>fs_test.sh html ./2015-07-10_KvD
+<p>The output from checking is not very user friendly. To generate easily
+browsed HTML, run:</p>
+<pre><code>fs_test html 2015-07-10_KvD
 </code></pre><p>This will print a message similar to:</p>
-<pre><code>Browse to file:///mnt/sdb1/tom/bitbucket/fs/./2015-07-10_KvD/html/index.html
-</code></pre><p>Opening this link should display a page similar to <a href="http://sibylfs.github.io/sibylfs_examples/2015-07-10_KvD/html/index.html" target="_blank">http://sibylfs.github.io/sibylfs_examples/2015-07-10_KvD/html/index.html</a></p>
-<p>For a single filesystem (say, ext4 on Linux), a full check run with HTML is about 1.2GB. An example full run is <a href="http://sibylfs.github.io/sibylfs_examples/2015-07-24_y2I/html/" target="_blank">http://sibylfs.github.io/sibylfs_examples/2015-07-24_y2I/html/</a></p>
+<pre><code>Browse to file:///mnt/sdb1/tom/bitbucket/fs/2015-07-10_KvD/html/index.html
+</code></pre><p>Opening this link should display a page similar to
+<a href="http://sibylfs.github.io/sibylfs_examples/2015-07-10_KvD/html/index.html" target="_blank">http://sibylfs.github.io/sibylfs_examples/2015-07-10_KvD/html/index.html</a></p>
+<p>For a single filesystem (say, ext4 on Linux), a full check run with HTML
+is about 1.2GB. An example full run is
+<a href="http://sibylfs.github.io/sibylfs_examples/2015-07-24_y2I/html/" target="_blank">http://sibylfs.github.io/sibylfs_examples/2015-07-24_y2I/html/</a></p>
 
                     
                     </section>

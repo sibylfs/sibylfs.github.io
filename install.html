@@ -8,7 +8,7 @@
         <title>Installation | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.1.0">
+        <meta name="generator" content="GitBook 2.4.3">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -19,6 +19,10 @@
         <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
         
     <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
     
     
 
@@ -36,32 +40,33 @@
     <body>
         
         
-    <div class="book" data-level="3" data-basepath="." data-revision="Wed Sep 30 2015 15:58:11 GMT+0100 (BST)">
+    <div class="book" data-level="3" data-basepath="." data-revision="Sun Oct 04 2015 21:30:03 GMT+0100 (BST)">
     
 
 <div class="book-summary">
-    <div class="book-search">
+    <div class="book-search" role="search">
         <input type="text" placeholder="Type to search" class="form-control" />
     </div>
-    <ul class="summary">
-        
-        
-        
-        
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
 
-        
+            
 
-        
+            
     
         <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
+                
                         <i class="fa fa-check"></i>
                         
                         Introduction
                     </a>
-                
             
             
         </li>
@@ -70,13 +75,13 @@
             
                 
                     <a href="./help.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>1.</b>
                         
                         Getting help
                     </a>
-                
             
             
         </li>
@@ -85,13 +90,13 @@
             
                 
                     <a href="./overview.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>2.</b>
                         
                         System overview
                     </a>
-                
             
             
         </li>
@@ -100,13 +105,13 @@
             
                 
                     <a href="./install.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>3.</b>
                         
                         Installation
                     </a>
-                
             
             
         </li>
@@ -115,13 +120,13 @@
             
                 
                     <a href="./obtaining_test_scripts.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>4.</b>
                         
                         Obtaining test scripts
                     </a>
-                
             
             
         </li>
@@ -130,13 +135,13 @@
             
                 
                     <a href="./executing_scripts.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>5.</b>
                         
                         Executing test scripts to obtain traces
                     </a>
-                
             
             
         </li>
@@ -145,13 +150,13 @@
             
                 
                     <a href="./checking_traces.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>6.</b>
                         
                         Checking the traces using SibylFS
                     </a>
-                
             
             
         </li>
@@ -160,13 +165,13 @@
             
                 
                     <a href="./generating_html.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>7.</b>
                         
                         Generating HTML output
                     </a>
-                
             
             
         </li>
@@ -175,13 +180,13 @@
             
                 
                     <a href="./faq.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>8.</b>
                         
                         FAQ
                     </a>
-                
             
             
         </li>
@@ -190,33 +195,34 @@
             
                 
                     <a href="./acks.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>9.</b>
                         
                         Acknowledgements
                     </a>
-                
             
             
         </li>
     
 
 
-        
-        <li class="divider"></li>
-        <li>
-            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-                Published with GitBook
-            </a>
-        </li>
-        
-    </ul>
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
 </div>
 
     <div class="book-body">
         <div class="body-inner">
-            <div class="book-header">
+            <div class="book-header" role="navigation">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
     <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
@@ -300,7 +306,7 @@
     </h1>
 </div>
 
-            <div class="page-wrapper" tabindex="-1">
+            <div class="page-wrapper" tabindex="-1" role="main">
                 <div class="page-inner">
                 
                 
@@ -308,17 +314,49 @@
                     
                         <h1 id="installation">Installation</h1>
 <p>The repository for the project is <a href="https://github.com/sibylfs/sibylfs_src" target="_blank">https://github.com/sibylfs/sibylfs_src</a>.</p>
+<p>OPAM is the OCaml Package Manager which manages sets of complete OCaml
+package development environments per user. It&apos;s available on Linux, OS
+X, and FreeBSD and is the recommended way to install, use, and develop
+SibylFS. See <a href="#opam-install">Installing with OPAM</a> and <a href="#opam-develop">Developing
+with OPAM</a> for instructions.</p>
 <p>Nix is a package manager available on Linux (x86-64) and Mac (Darwin,
-x86-64) (and possibly others e.g. Linux i686).</p>
-<p>On Linux, the simplest way to install is probably using prebuilt
-binaries via nix (see below). However, these are probably out of date
-wrt the github source.</p>
+x86-64) (and possibly others e.g. Linux i686). SibylFS is also available
+via nix (see <a href="#nix-install">Installing with nix</a>).</p>
+<p>On Linux, the simplest way to install is using prebuilt binaries via nix
+(see <a href="#nix-binaries">Installing binaries with nix</a>).</p>
 <!-- Potentially quicker, but fragile, is to
 install "plain binaries".  -->
-<p>The most reliable method is probably &quot;installing from source via
-nix&quot;. This has the added advantage that it builds the current version
-of the code from github.</p>
-<h2 id="installing-from-source-via-nix">Installing from source via nix</h2>
+<h2 id="-a-name-opam-install-a-installing-with-opam"><a name="opam-install"></a> Installing with OPAM</h2>
+<ul>
+<li><p>Install <em>opam</em></p>
+<ul>
+<li><p><a href="http://opam.ocaml.org/doc/Install.html#OSX" target="_blank">On OS X</a></p>
+</li>
+<li><p><a href="http://opam.ocaml.org/doc/Install.html#Ubuntu" target="_blank">On Ubuntu</a></p>
+</li>
+<li><p><a href="http://opam.ocaml.org/doc/Install.html" target="_blank">On other operating systems</a></p>
+</li>
+</ul>
+</li>
+<li><p>Ensure you have loaded OPAM&apos;s configuration into <code>bash</code> with</p>
+</li>
+</ul>
+<pre><code>eval `opam config env`
+</code></pre><ul>
+<li>Or another shell with</li>
+</ul>
+<pre><code>eval `opam config env --shell=[sh|csh|zsh|fish]`
+</code></pre><ul>
+<li>Run</li>
+</ul>
+<pre><code>opam install sibylfs
+</code></pre><h2 id="-a-name-opam-develop-a-developing-with-opam"><a name="opam-develop"></a> Developing with OPAM</h2>
+<ul>
+<li>Run</li>
+</ul>
+<pre><code>git clone https://github.com/sibylfs/sibylfs_src
+opam pin add sibylfs sibylfs_src
+</code></pre><h2 id="-a-name-nix-install-a-installing-with-nix"><a name="nix-install"></a> Installing with nix</h2>
 <ul>
 <li>Install nix following <a href="https://nixos.org/nix/" target="_blank">https://nixos.org/nix/</a> : type </li>
 </ul>
@@ -348,7 +386,7 @@ with <code>sibylfs_src/</code> refer to this directory.</p>
 <pre><code>nix-env -i ./result
 </code></pre><p>An example install is as follows:</p>
 <p><a href="https://asciinema.org/a/c4nxhmnn1ctsi1w1615wzgrrf" target="_blank"><img src="https://asciinema.org/a/c4nxhmnn1ctsi1w1615wzgrrf.png" alt="asciicast"></a></p>
-<h2 id="installing-prebuilt-binaries-via-nix-linux-mac">Installing prebuilt binaries via nix (Linux, Mac)</h2>
+<h2 id="-a-name-nix-binaries-a-installing-prebuilt-binaries-via-nix-linux-mac"><a name="nix-binaries"></a> Installing prebuilt binaries via nix (Linux, Mac)</h2>
 <ul>
 <li><p>Install nix as above</p>
 </li>
@@ -383,76 +421,11 @@ bit). Unpack this file:</p>
 </code></pre><p>This should create a directory <code>sibylfs/bin</code> containing the
 executables. You should place these on your path (or execute from
 inside that directory).</p>
-<h2 id="installing-from-source-using-ocaml-ocamlfind-and-opam-2015-08-20-fixme-needs-updating">Installing from source using OCaml, ocamlfind and opam (2015-08-20 FIXME needs updating)</h2>
-<p><strong><em>Because of the large number of dependencies, this method is quite
-   fragile. </em></strong></p>
-<p>First, you need to install ocaml and ocamlfind and opam. Perhaps the
-easiest is to install opam (which includes ocaml and ocamlfind)
-following <a href="https://opam.ocaml.org/doc/Install.html" target="_blank">https://opam.ocaml.org/doc/Install.html</a> using the binary
-installer. Any version of ocaml &gt;= 4.01.0 should work. For example:</p>
-<ul>
-<li><p>Download <code>opam_installer.sh</code> </p>
-</li>
-<li><p>Type <code>sh ./opam_installer.sh /usr/local/bin 4.02.1</code> to install opam. </p>
-</li>
-<li><p>Type <code>opam install ocamlfind</code> to install ocamlfind</p>
-</li>
-</ul>
-<p>The SibylFS specification is written in Lem. To build Lem:</p>
-<ul>
-<li><p>Clone the Lem repository, branch fs, using git: <code>git clone -b fs
-https://tomridge@bitbucket.org/tomridge/lem.git</code> . This will create
-a directory <code>lem</code>. In the following paths starting <code>lem/</code> refer to
-this directory.</p>
-</li>
-<li><p>Change to the lem directory: <code>cd lem/</code> </p>
-</li>
-<li><p>Build Lem and the OCaml libraries: <code>make lem ocaml-libs</code></p>
-</li>
-</ul>
-<!-- FIXME ref to repo in following -->
-<p>Now you need to get the SibylFS source.</p>
-<ul>
-<li>Use git to clone the SibylFS source: <code>git clone
-https://github.com/sibylfs/sibylfs_src</code>. This will create a directory
-<code>sibylfs_src</code>. In the following, paths starting with <code>sibylfs_src/</code> refer to this
-directory.</li>
-</ul>
-<p>The <code>sibylfs_src/</code> directory contains two particular subdirectories: <code>fs_spec</code>
-(the specification) and <code>fs_test</code> (the test tools). To build <code>fs_spec</code> you need the following:</p>
-<ul>
-<li><p>ocaml tool cppo: <code>opam install cppo</code></p>
-</li>
-<li><p>ocaml libraries sha, sexplib: <code>opam install sha sexplib</code></p>
-</li>
-<li><p>Lem: link <code>lem/</code> under <code>fs/src_ext</code>: <code>cd fs/src_ext &amp;&amp; ln -s &lt;path to lem/&gt; ./lem</code></p>
-</li>
-</ul>
-<p>To build <code>fs_test</code> you need: </p>
-<ul>
-<li><p>ocaml tools camlp4 and menhir: <code>opam install camlp4 menhir</code></p>
-</li>
-<li><p>ocaml libraries cmdliner, fd-send-recv, cow: <code>opam install cmdliner fd-send-recv cow</code></p>
-</li>
-</ul>
-<p>If you have opam, you can install ocamlfind, sha, cppo, cmdliner,
-fd-send-recv, camlp4, sexplib, menhir and all of their transitive
-dependencies with <code>make dep</code> in the <code>sibylfs_src/</code> directory.</p>
-<p>Having installed these dependencies, you should now be able to build SibylFS:</p>
-<ul>
-<li>In <code>sibylfs_src/</code> type: <code>make</code></li>
-</ul>
-<p>When this is complete, you need to add the executables in <code>sibylfs_src/fs_test</code>
-to your path, e.g. by typing:</p>
-<pre><code>export PATH=&lt;absolute path to sibylfs_src&gt;/fs_test:$PATH
-</code></pre><!-- FIXME test these source-compile instructions -->
 <h2 id="after-installation">After installation</h2>
-<p>SibylFS provides several command-line tools. These are typically
-accessed indirectly by the top-level <code>fs_test.sh</code> script. For example,
-<code>fs_test.sh --help</code> displays a man page showing the various
-subcommands available (check, clean, exec etc.). Further information
-is provided eg for the check subcommand by typing <code>fs_test.sh check
---help</code>.</p>
+<p>SibylFS provides several command-line tools. <code>fs_test --help</code> displays a
+man page showing the various subcommands available (check, clean, exec
+etc.). Each subcommand also has online help available. For instance, for
+the check subcommand usage information is available via <code>fs_test check --help</code>.</p>
 
                     
                     </section>

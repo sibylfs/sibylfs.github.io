@@ -8,7 +8,7 @@
         <title>Obtaining test scripts | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.1.0">
+        <meta name="generator" content="GitBook 2.4.3">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -19,6 +19,10 @@
         <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
         
     <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
     
     
 
@@ -36,32 +40,33 @@
     <body>
         
         
-    <div class="book" data-level="4" data-basepath="." data-revision="Wed Sep 30 2015 15:58:11 GMT+0100 (BST)">
+    <div class="book" data-level="4" data-basepath="." data-revision="Sun Oct 04 2015 21:30:03 GMT+0100 (BST)">
     
 
 <div class="book-summary">
-    <div class="book-search">
+    <div class="book-search" role="search">
         <input type="text" placeholder="Type to search" class="form-control" />
     </div>
-    <ul class="summary">
-        
-        
-        
-        
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
 
-        
+            
 
-        
+            
     
         <li class="chapter " data-level="0" data-path="index.html">
             
                 
                     <a href="./index.html">
+                
                         <i class="fa fa-check"></i>
                         
                         Introduction
                     </a>
-                
             
             
         </li>
@@ -70,13 +75,13 @@
             
                 
                     <a href="./help.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>1.</b>
                         
                         Getting help
                     </a>
-                
             
             
         </li>
@@ -85,13 +90,13 @@
             
                 
                     <a href="./overview.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>2.</b>
                         
                         System overview
                     </a>
-                
             
             
         </li>
@@ -100,13 +105,13 @@
             
                 
                     <a href="./install.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>3.</b>
                         
                         Installation
                     </a>
-                
             
             
         </li>
@@ -115,13 +120,13 @@
             
                 
                     <a href="./obtaining_test_scripts.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>4.</b>
                         
                         Obtaining test scripts
                     </a>
-                
             
             
         </li>
@@ -130,13 +135,13 @@
             
                 
                     <a href="./executing_scripts.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>5.</b>
                         
                         Executing test scripts to obtain traces
                     </a>
-                
             
             
         </li>
@@ -145,13 +150,13 @@
             
                 
                     <a href="./checking_traces.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>6.</b>
                         
                         Checking the traces using SibylFS
                     </a>
-                
             
             
         </li>
@@ -160,13 +165,13 @@
             
                 
                     <a href="./generating_html.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>7.</b>
                         
                         Generating HTML output
                     </a>
-                
             
             
         </li>
@@ -175,13 +180,13 @@
             
                 
                     <a href="./faq.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>8.</b>
                         
                         FAQ
                     </a>
-                
             
             
         </li>
@@ -190,33 +195,34 @@
             
                 
                     <a href="./acks.html">
+                
                         <i class="fa fa-check"></i>
                         
                             <b>9.</b>
                         
                         Acknowledgements
                     </a>
-                
             
             
         </li>
     
 
 
-        
-        <li class="divider"></li>
-        <li>
-            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-                Published with GitBook
-            </a>
-        </li>
-        
-    </ul>
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
 </div>
 
     <div class="book-body">
         <div class="body-inner">
-            <div class="book-header">
+            <div class="book-header" role="navigation">
     <!-- Actions Left -->
     <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
     <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
@@ -300,7 +306,7 @@
     </h1>
 </div>
 
-            <div class="page-wrapper" tabindex="-1">
+            <div class="page-wrapper" tabindex="-1" role="main">
                 <div class="page-inner">
                 
                 
@@ -313,10 +319,10 @@ result, the test scripts are stored in a separate repository. </p>
 <pre><code>git clone https://github.com/sibylfs/sibylfs_test_suite
 </code></pre><p>Once you have downloaded/cloned the test scripts, you should have a
 directory <code>sibylfs_test_suite/test-suite/</code>, under which are various
-subdirectories such as <code>check</code>, <code>file_descriptors</code>, and <code>open</code>. In the
+subdirectories such as <code>chdir</code>, <code>file_descriptors</code>, and <code>open</code>. In the
 following, paths starting <code>test-suite/</code> refer to this directory.</p>
 <h2 id="regenerating-the-test-scripts">Regenerating the test scripts</h2>
-<p>Along with <code>fs_test.sh</code>, SibylFS contains an executable <code>tgen</code> used to
+<p>Along with <code>fs_test</code>, SibylFS contains an executable <code>tgen</code> used to
 generate tests. You need to have this on your path. Then in
 <code>test-suite/</code> there is a shell script <code>gentests.sh</code> which uses
 <code>tgen</code>. Running this script generates the tests. Type: <code>./gentests.sh</code></p>
