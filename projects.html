@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Executing test scripts to obtain traces | Introduction</title>
+        <title>Possible projects using SibylFS | Introduction</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.1.0">
@@ -25,10 +25,10 @@
         
     
     
-    <link rel="next" href="./checking_traces.html" />
+    <link rel="next" href="./acks.html" />
     
     
-    <link rel="prev" href="./obtaining_test_scripts.html" />
+    <link rel="prev" href="./faq.html" />
     
 
         
@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="5" data-basepath="." data-revision="Mon Oct 26 2015 14:59:15 GMT+0000 (GMT)">
+    <div class="book" data-level="9" data-basepath="." data-revision="Mon Oct 26 2015 14:59:15 GMT+0000 (GMT)">
     
 
 <div class="book-summary">
@@ -126,7 +126,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="5" data-path="executing_scripts.html">
+        <li class="chapter " data-level="5" data-path="executing_scripts.html">
             
                 
                     <a href="./executing_scripts.html">
@@ -186,7 +186,7 @@
             
         </li>
     
-        <li class="chapter " data-level="9" data-path="projects.html">
+        <li class="chapter active" data-level="9" data-path="projects.html">
             
                 
                     <a href="./projects.html">
@@ -321,53 +321,59 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="executing-test-scripts-to-obtain-traces">Executing test scripts to obtain traces</h1>
-<p><strong>WARNING!!! Executing test scripts directly on your machine has the
-potential to destroy your data.</strong> For example, as superuser, you
-probably do not want to run a test which successfully removes the root
-directory of your filesystem. To avoid such unfortunate events, the
-tools run all tests in a chroot environment, so you should be reasonably
-safe. However, because the test environment&apos;s isolation measures may
-have defects, it is recommended that you run all tests in virtual
-machines or installations which you can afford to lose.</p>
-<h2 id="prerequisites">Prerequisites</h2>
-<p>The following assumes you have installed SibylFS, and that the
-executable <code>fs_test</code> is available on your path.</p>
-<h2 id="executing-the-scripts">Executing the scripts</h2>
-<p>The test executor executes the test scripts and records the calls and
-return values at the libc interface. To see the manpage:</p>
-<pre><code>fs_test exec --help
-</code></pre><p>To run a short sequence of <code>mkdir</code> tests, on Linux ext4, execute the
-following in directory <code>sibylfs_test_suite/</code>:</p>
-<pre><code>fs_test exec --suites test-suite --suite=mkdir --model ext4 2&gt; summary.err.md
-</code></pre><p>You need to be root to run this in order to have the ability to mount
-file systems and create and destroy temporary users and groups. As a
-non-superuser, you could run:</p>
-<pre><code>sudo sh -c &quot;env \&quot;PATH=$PATH:\$PATH\&quot; fs_test exec --suites test-suite --suite=mkdir --model ext4 2&gt; summary.err.md&quot;
-</code></pre><p>If this executes successfully, there should be a directory named
-something like <code>2015-07-10_KvD</code> (the date, followed by a random string
-of 3 letters which serves as a unique identifier). This will be owned by
-root, so you need to type:</p>
-<pre><code>sudo chown -R username:group 2015-07-10_KvD
-</code></pre><p>Replacing <code>username</code> and <code>group</code> with your username and personal group,
-respectively.</p>
-<p>Then you should be able to see the trace files by typing <code>find 2015-07-10_KvD/</code>:</p>
-<pre><code>2015-07-10_KvD/
-2015-07-10_KvD/ext4_loop
-2015-07-10_KvD/ext4_loop/mkdir
-2015-07-10_KvD/ext4_loop/mkdir/adhoc_mkdir_link_count-int.trace
-2015-07-10_KvD/ext4_loop/mkdir/mkdir___mkdir_empty_dir1_____0777-int.trace
-2015-07-10_KvD/ext4_loop/mkdir/mkdir___mkdir_empty_dir1___0777-int.trace
-[...]
-2015-07-10_KvD/ext4_loop/mkdir/results
-2015-07-10_KvD/ext4_loop/mkdir/results/exec_adhoc_mkdir_link_count-int.trace
-2015-07-10_KvD/ext4_loop/mkdir/results/exec_adhoc_mkdir_link_count-int.trace.err
-[...]
-2015-07-10_KvD/ext4_loop/mkdir/results/exec_mkdir___mkdir_nonexist_dir__nonexist_3___0777-int.trace.err
-2015-07-10_KvD/index.traces
-</code></pre><p>Note the directory structure (<code>.../mkdir/</code> which contains the original
-scripts and <code>.../mkdir/results/</code> which contains the executed traces) and
-existence of the file <code>index.traces</code>.</p>
+                        <h1 id="possible-projects-using-sibylfs">Possible projects using SibylFS</h1>
+<p>(Based on an email from dsheets)</p>
+<p>There are a number of interesting projects which could be done with
+SibylFS and combined in powerful ways. Among them are:</p>
+<ul>
+<li><p>Test case reduction</p>
+<p>You would use SibylFS&apos;s checked trace model to reduce the number of
+state transitions required to exhibit the &quot;same&quot; model deviation
+through repeated application of the model.</p>
+</li>
+<li><p>Test case translation</p>
+<p>You would translate the transition system of the model into a C
+program (or programs) which would either produce the same output as
+the present script interpreter or would provide a predicate command
+that would exit 0 on a &apos;correct&apos; system and 1 on a deviant
+system. The simple cases for this are trivial and the complicated
+cases involve managing users and processes. It would be nice for the
+test cases to stand-alone without requiring linking to a runtime
+system (but that may be too hard/annoying/unwieldy or simply
+including the relevant bits of the runtime in the test case).</p>
+</li>
+<li><p>Race test generation without instrumentation</p>
+<p>You would translate transitions which have overlapping call/return
+pairs into one or more C programs which include
+multi-thread/multi-process races that have an interference
+distribution which gives &quot;good&quot; coverage. Feedback into further race
+generation and instrumentation to validate the interference
+distribution would be useful. Combined with 1 and 2, this could lead
+to a very powerful file system race reproduction case generator.</p>
+</li>
+<li><p>Test case generation</p>
+<p>You would use the specification model or develop a property-based
+model to generate test cases for transitions that have already been
+specified but may not have been tested adequately. The difficulty
+here is understanding which non-model properties may be relevant to
+test case generation and ensuring that the number of generated test
+cases does not explode (or somehow culling them).</p>
+</li>
+<li><p>Specification parameterization</p>
+<p>You would work with Tom to parameterize at run-time the Lem
+specification against filesystems, libcs, and features. Currently,
+we only parameterize across operating system VFS layers at
+run-time. We would really like to be able to indicate that we want
+to model ext4 on Linux or unknown filesystem without symlinks (and
+instead a consistent errno) on OS X. Combined with 1 and 2, this
+could lead to interesting file system fingerprinting tools.</p>
+</li>
+<li><p>Specify a new class of syscalls like the *at commands (linkat, mkdirat, etc)</p>
+<p>You would make a major specification coverage contribution and help
+find file system bugs in obscure but important implementations</p>
+</li>
+</ul>
+<p>There are surely other interesting projects in this area but nothing else that I can recall at the moment. Do feel free to reach out if you have any questions or want to discuss these further.</p>
 
                     
                     </section>
@@ -378,10 +384,10 @@ existence of the file <code>index.traces</code>.</p>
         </div>
 
         
-        <a href="./obtaining_test_scripts.html" class="navigation navigation-prev " aria-label="Previous page: Obtaining test scripts"><i class="fa fa-angle-left"></i></a>
+        <a href="./faq.html" class="navigation navigation-prev " aria-label="Previous page: FAQ"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="./checking_traces.html" class="navigation navigation-next " aria-label="Next page: Checking the traces using SibylFS"><i class="fa fa-angle-right"></i></a>
+        <a href="./acks.html" class="navigation navigation-next " aria-label="Next page: Acknowledgements"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
